@@ -1,0 +1,15 @@
+<launch>
+	<arg name="device" default="/dev/video0" doc="Camera Device" />
+	<arg name="camera_topic" default="/usb_cam/image_raw" doc="Camera topic to stream from" />
+
+	<node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="log" >
+		<remap from="/usb_cam/image_raw" to="$(arg camera_topic)" />
+	    <param name="video_device" value="$(arg device)" />
+	    <param name="image_width" value="1920" />
+	    <param name="image_height" value="1080" />
+	    <param name="pixel_format" value="mjpeg" />
+	    <param name="camera_frame_id" value="usb_cam" />
+	    <param name="io_method" value="mmap"/>
+    </node>
+
+</launch>

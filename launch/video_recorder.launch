@@ -1,0 +1,10 @@
+<launch>
+	<arg name="camera_topic" default="/usb_cam/image_raw" doc="Camera topic to stream from" />
+
+	<node name="video_recorder_server" pkg="video_recorder" type="video_recorder_server.py" output="screen">
+		<remap from="record_video" to="video_recorder/record" />
+		<remap from="stop_recording" to="video_recorder/stop_recording" />
+		<param name="camera_topic" value="$(arg camera_topic)"/>
+
+	</node>
+</launch>

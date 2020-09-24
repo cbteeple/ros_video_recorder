@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="filename" doc="Where to save the video" />
+	<arg name="camera_topic" default="/usb_cam/image_raw" doc="Camera topic to stream from" />
+	
+  	<node name="video_recorder_action" pkg="image_view" type="video_recorder" respawn="false" output="screen">
+	    <remap from="image" to="$(arg camera_topic)"/>
+	    <param name="fps" value="30" />
+	    <param name="codec" value="X264" />
+	    <param name="filename" value="$(arg filename)" />
+ 	</node>
+</launch>

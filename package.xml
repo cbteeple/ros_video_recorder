@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>video_recorder</name>
+  <version>1.0.0</version>
+  <description>Service to list topics and select them for recording</description>
+
+  <maintainer email="florian.zimmermann@epfl.ch">Florian Zimmermann</maintainer>
+
+  <license>GPLv3</license>
+
+  <author email="florian.zimmermann@epfl.ch">Florian Zimmermann</author>
+
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>rospy_message_converter</depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export></export>
+</package>
