@@ -1,0 +1,22 @@
+# Camera configuration
+image_width:  1920 # px
+image_height: 1080 # px
+framerate:    30  # fps
+io_method: "mmap" # possible values: mmap, read, userptr
+pixel_format: mjpeg # possible values: yuyv, uyvy, mjpeg, yuvmono10, rgb24
+
+brightness: 128 #0-255, -1 "leave alone"
+contrast:   144 #0-255, -1 "leave alone"
+saturation: 143 #0-255, -1 "leave alone"
+sharpness:  128 #0-255, -1 "leave alone"
+
+autofocus: False # enable/disable autofocus
+focus: 0 #0-255, -1 "leave alone"
+
+autoexposure: False # enable/disable autoexposure
+exposure:     200
+gain:         0 #0-100?, -1 "leave alone"
+
+# White Balance (comment out to use default values)
+auto_white_balance: False 
+white_balance:      2500

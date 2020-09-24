@@ -24,7 +24,11 @@ def recordTopics(req):
 	command = "roslaunch video_recorder record_video.launch filename:=" + req.name + " camera_topic:=" + camera_topic
 	print("Recording to file named %s."%(req.name))
 
-	pidDict[req.name] = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True, cwd="/tmp/")
+	#pidDict[req.name] = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True, cwd="/tmp/")
+	pidDict[req.name] = subprocess.Popen(command, shell=True, cwd="/tmp/",
+												  stdin=None,
+												  stdout=open(os.devnull, 'wb'),
+												  stderr=open(os.devnull, 'wb'))
 
 	recording = True
 	return RecordVideoResponse(True)
