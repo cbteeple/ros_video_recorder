@@ -25,16 +25,8 @@ def recordTopics(req):
 	print("Recording to file named %s."%(req.name))
 
 	pidDict[req.name] = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True, cwd="/tmp/")
-	#pidDict[req.name] = subprocess.Popen(command, shell=True, cwd="/tmp/",
-	#											  stdin=None,
-	#											  stdout=open(os.devnull, 'wb'),
-	#											  stderr=open(os.devnull, 'wb'))
 
 	recording = True
-
-	time.sleep(2.0)
-	print("waited 2 sec")
-
 	return RecordVideoResponse(True)
  
 def stopRecording(req, timeout = 2.0):
