@@ -6,7 +6,9 @@
   	<node name="video_recorder_action" pkg="image_view" type="video_recorder" respawn="false" output="screen">
 	    <remap from="image" to="$(arg camera_topic)"/>
 	    <param name="fps" value="30" />
-	    <param name="codec" value="X264" />
+		<param name="tolerance" value="15" />
+	    <param name="codec" value="avc1" />
 	    <param name="filename" value="$(arg filename)" />
+
  	</node>
 </launch>

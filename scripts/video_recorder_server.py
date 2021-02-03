@@ -24,11 +24,11 @@ def recordTopics(req):
 	command = "roslaunch video_recorder record_video.launch filename:=" + req.name + " camera_topic:=" + camera_topic
 	print("Recording to file named %s."%(req.name))
 
-	#pidDict[req.name] = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True, cwd="/tmp/")
-	pidDict[req.name] = subprocess.Popen(command, shell=True, cwd="/tmp/",
-												  stdin=None,
-												  stdout=open(os.devnull, 'wb'),
-												  stderr=open(os.devnull, 'wb'))
+	pidDict[req.name] = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True, cwd="/tmp/")
+	#pidDict[req.name] = subprocess.Popen(command, shell=True, cwd="/tmp/",
+	#											  stdin=None,
+	#											  stdout=open(os.devnull, 'wb'),
+	#											  stderr=open(os.devnull, 'wb'))
 
 	recording = True
 	return RecordVideoResponse(True)
@@ -49,6 +49,8 @@ def stopRecording(req, timeout = 2.0):
 			subProcess.send_signal(signal.SIGINT)
 		psutil.wait_procs(children, timeout=timeout)
 		p.wait()
+
+		del pidDict[req.name]
 
 
 	else:

@@ -5,8 +5,8 @@ framerate:    30  # fps
 io_method: "mmap" # possible values: mmap, read, userptr
 pixel_format: mjpeg # possible values: yuyv, uyvy, mjpeg, yuvmono10, rgb24
 
-brightness: 128 #0-255, -1 "leave alone"
-contrast:   144 #0-255, -1 "leave alone"
+brightness: 255 #0-255, -1 "leave alone"
+contrast:   160 #0-255, -1 "leave alone"
 saturation: 143 #0-255, -1 "leave alone"
 sharpness:  128 #0-255, -1 "leave alone"
 
@@ -15,7 +15,7 @@ focus: 5 #0-255, -1 "leave alone"
 
 autoexposure: False # enable/disable autoexposure
 exposure:     200
-gain:         0 #0-100?, -1 "leave alone"
+gain:         50 #0-100?, -1 "leave alone"
 
 # White Balance (comment out to use default values)
 auto_white_balance: False 
