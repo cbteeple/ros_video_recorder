@@ -11,7 +11,7 @@ saturation: 143 #0-255, -1 "leave alone"
 sharpness:  128 #0-255, -1 "leave alone"
 
 autofocus: False # enable/disable autofocus
-focus: 5 #0-255, -1 "leave alone"
+focus: 0 #0-255, -1 "leave alone"
 
 autoexposure: False # enable/disable autoexposure
 exposure:     200
